@@ -24,15 +24,15 @@ jobs:
 
       - run:
 
-        name: Build and test
+          name: Build and test
 
-        command:
+          command:
 
-          gradle test
+            gradle test
 
-      - store_test_results:
+        - store_test_results:
 
-        path: build/test-results
+          path: build/test-results
 
   package:
 
@@ -46,15 +46,15 @@ jobs:
 
       - run:
 
-        name: Package and store Artifacts
+          name: Package and store Artifacts
 
-        command:
+          command:
 
-          gradle jar
+            gradle jar
 
-      - store_artifacts:
+        - store_artifacts:
 
-          path: build/libs
+            path: build/libs
 
-          destination: prefix
+            destination: prefix
 
