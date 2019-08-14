@@ -30,13 +30,13 @@ jobs:
 
           gradle jar
 
-      - run:
+        - run:
 
-        name: Build and test
+          name: Build and test
 
-        command:
+          command:
 
-          gradle test
+            gradle test
 
       - store_test_results:
 
