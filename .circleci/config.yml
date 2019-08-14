@@ -36,6 +36,9 @@ jobs:
       - store_test_results:
 
           path: build/test-results
+      - restore_cache:
+          keys:
+            - my-dependencies-{{ checksum "build.gradle" }}
      
 
 
@@ -67,6 +70,10 @@ jobs:
           root: .
           paths:
             - .
+      - save_cache:
+          key: my-dependencies-{{ checksum "build.gradle" }}
+          paths:
+            - my-project/my-dependencies-directory
 
   dockerize:
     machine: true
