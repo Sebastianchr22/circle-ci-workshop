@@ -32,6 +32,9 @@ jobs:
       - store_test_results:
 
           path: build/test-results
+      - attach_workspace:
+          at: /pers/ws
+
 
   package:
 
@@ -57,3 +60,8 @@ jobs:
 
           destination: prefix
 
+
+      - persist_to_workspace:
+          root: pers/ws
+          paths:
+            - build/* 
