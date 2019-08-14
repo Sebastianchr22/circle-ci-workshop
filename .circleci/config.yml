@@ -23,6 +23,9 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - restore_cache:
+          keys:
+            - my-dependencies-{{ checksum "build.gradle" }}
       - checkout
 
       - run:
@@ -36,9 +39,7 @@ jobs:
       - store_test_results:
 
           path: build/test-results
-      - restore_cache:
-          keys:
-            - my-dependencies-{{ checksum "build.gradle" }}
+      
      
 
 
