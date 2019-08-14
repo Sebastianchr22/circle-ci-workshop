@@ -30,9 +30,9 @@ jobs:
 
           gradle test
 
-      - store_test_results:
+    - store_test_results:
 
-        path: build/test-results
+      path: build/test-results
 
   package:
 
@@ -52,9 +52,9 @@ jobs:
 
           gradle jar
 
-      - store_artifacts:
+    - store_artifacts:
 
-          path: build/libs
+        path: build/libs
 
-          destination: prefix
+        destination: prefix
 
