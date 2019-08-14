@@ -2,10 +2,10 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: alpine:3.7circleci/openjdk:8-jdk
     steps:
+      - checkout
       - run:
          name: First Step
          command:
-           echo 'Hello world!'
-           echo 'This is my delivery pipeline..'
+           gradle test
