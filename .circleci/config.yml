@@ -39,9 +39,9 @@ jobs:
 
           gradle test
 
-       - store_test_results:
+      - store_test_results:
 
-           path: build/test-results
+        path: build/test-results
 
   package:
 
