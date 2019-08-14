@@ -33,7 +33,7 @@ jobs:
 
           path: build/test-results
       - attach_workspace:
-          at: /pers/ws
+          at: .
 
 
   package:
@@ -58,10 +58,9 @@ jobs:
 
           path: build/libs
 
-          destination: prefix
-
+          destination: output
 
       - persist_to_workspace:
-          root: test
+          root: .
           paths:
-            - build/* 
+            - .
