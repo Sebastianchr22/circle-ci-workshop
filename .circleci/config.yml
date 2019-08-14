@@ -5,10 +5,7 @@ workflows:
 
     jobs:
       - package
-      - test:
-          requires:
-
-            - package
+      - test
 
 jobs:
 
