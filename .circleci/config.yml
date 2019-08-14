@@ -4,14 +4,13 @@ workflows:
   test_and_packaging:
 
     jobs:
+      - package:
 
-     - test
-
-     - package:
-
+      - test
         requires:
 
-          - test
+          - package
+
 jobs:
 
   test:
@@ -26,17 +25,11 @@ jobs:
 
       - run:
 
+        name: Build and test
+
         command:
 
-          gradle jar
-
-        - run:
-
-          name: Build and test
-
-          command:
-
-            gradle test
+          gradle test
 
       - store_test_results:
 
